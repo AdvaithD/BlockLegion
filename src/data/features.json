@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Workshops",
+    "description": "Introductory courses covering the fundamentals of cryptocurrencies and smart contracts.",
+    "image": "/features/noun_branding_1885335.svg"
+  },
+  {
+    "title": "Projects",
+    "description": "We work on open source projects and build innovative apps on the web3 stack",
+    "image": "/features/noun_The Process_1885341.svg"
+  },
+  {
+    "title": "Analysis",
+    "description": "Comprehensive analysis of the blockchain ecosystem.",
+    "image": "/features/noun_3d modeling_1885342.svg"
+  }
+]
