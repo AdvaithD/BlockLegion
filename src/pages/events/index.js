@@ -1,36 +1,36 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import SEO from '../../components/SEO'
-import Layout from '../../layouts/index'
+import React from 'react';
+import { graphql } from 'gatsby';
+import SEO from '../../components/SEO';
+import Layout from '../../layouts/index';
 
-const Testimonials = props => {
-  const events = props.data.allMarkdownRemark.edges
+const Testimonials = (props) => {
+  const events = props.data.allMarkdownRemark.edges;
   return (
-    <Layout bodyClass='page-testimonials'>
-      <SEO title='Testimonials' />
-      <div className='intro'>
-        <div className='container'>
-          <div className='row'>
-            <div className='col-12'>
+    <Layout bodyClass="page-testimonials">
+      <SEO title="Testimonials" />
+      <div className="intro">
+        <div className="container">
+          <div className="row">
+            <div className="col-12">
               <h1>Upcoming Events</h1>
             </div>
           </div>
         </div>
       </div>
 
-      <div className='container pb-6'>
-        <div className='row'>
+      <div className="container pb-6">
+        <div className="row">
           {events.map(edge => (
             <div
               key={edge.node.frontmatter.path}
-              className='col-12 col-md-6 mb-1'
+              className="col-12 col-md-6 mb-1"
             >
-              <div className='testimonial'>
-                <div className='testimonials-meta'>
-                  <h2 className='testimonials-title'>
+              <div className="testimonial">
+                <div className="testimonials-meta">
+                  <h2 className="testimonials-title">
                     {edge.node.frontmatter.title}
                   </h2>
-                  <p className='testimonials-name'>
+                  <p className="testimonials-name">
                     {edge.node.frontmatter.name}
                   </p>
                   {/* <p className='testimonials-jobtitle'>
@@ -38,7 +38,7 @@ const Testimonials = props => {
                   </p> */}
                 </div>
                 <div
-                  className='testimonials-content'
+                  className="testimonials-content"
                   dangerouslySetInnerHTML={{ __html: edge.node.html }}
                 />
               </div>
@@ -47,8 +47,8 @@ const Testimonials = props => {
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query TestimonialsQuery {
@@ -64,11 +64,13 @@ export const query = graphql`
             path
             name
             jobtitle
+            date
+            time
           }
         }
       }
     }
   }
-`
+`;
 
-export default Testimonials
+export default Testimonials;
