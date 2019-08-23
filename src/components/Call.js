@@ -1,8 +1,8 @@
-import React from 'react'
-import { StaticQuery, graphql, Link } from 'gatsby'
+import React from 'react';
+import { StaticQuery, graphql, Link } from 'gatsby';
 
 const Call = props => (
-  <div className='call'>
+  <div className="call">
     {/* <div className='call-box-top'>
       <div className='call-phone'>
         <strong>Phone: </strong>
@@ -15,21 +15,22 @@ const Call = props => (
         </a>
       </div>
     </div> */}
-    <div className='call-box-bottom'>
-      <Link className='button button-primary mt-2' to='/events'>
+    <div className="call-box-bottom">
+      <Link className="button button-primary mt-2" to="/events">
         UPCOMING EVENTS
       </Link>
     </div>
 
     {props.button && (
-      <div className='call-box-bottom'>
-        <Link className='button button-primary mt-2' to='/contact'>
-          JOIN OUR SLACK!
-        </Link>
+      <div className="call-box-bottom">
+      <Link className="button button-primary mt-2" to="/events">
+      <a href="https://discord.gg/3YFTR5K" style={{ color: '#fff' }}>JOIN OUR DISCORD SERVER!</a>
+      </Link>
+
       </div>
     )}
   </div>
-)
+);
 
 export default props => (
   <StaticQuery
@@ -49,4 +50,4 @@ export default props => (
     `}
     render={data => <Call button={props.button} data={data} />}
   />
-)
+);
