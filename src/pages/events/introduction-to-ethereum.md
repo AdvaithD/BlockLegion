@@ -1,7 +1,7 @@
 ---
 path: '/events/introduction-to-ethereum'
 title: 'Build and Learn Ethereum Smart Contracts'
-date: 2019-09-19
+date: '2019-09-19'
 time: '5PM'
 draft: false
 image: ''

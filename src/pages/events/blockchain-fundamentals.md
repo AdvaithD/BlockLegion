@@ -1,12 +1,12 @@
 ---
 path: '/events/blockchain-fundamentals'
 title: 'How to Navigate the Blockchain Space'
-date: 2019-09-12
+date: '2019-09-12'
 draft: false
 image: ''
 businessurl: ''
 time: '5:00 PM - 6:30 PM'
-name: 'Instructor Name'
+names: 'Instructor Name'
 business: 'Lion Creative'
 jobtitle: 'Creative Director'
 ---
