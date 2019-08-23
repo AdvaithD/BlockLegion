@@ -1,10 +1,10 @@
 ---
-path: '/team/sage-kirk'
-title: 'Founding Member 2'
+path: '/team/nikita'
+title: 'Nikita'
 date: 2018-11-19T10:47:58+10:00
 draft: false
 # image: '/team/sage-kirk-485982-unsplash.jpg'
-# jobtitle: 'Founding Member'
+jobtitle: 'Vice President'
 # email: 'test@test.com'
 # linkedinurl: 'www.linkedin.com/sagekirk21'
 weight: 1
