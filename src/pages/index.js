@@ -30,7 +30,6 @@ const Home = (props) => {
           <div className="col-12">
             <h2 className="title-3 text-dark mb-4">Who We Are</h2>
           </div>
-          {/* code comes after this */}
           <div className="col-12 col-md-6 col-lg-4 mb-2">
             <div className="feature">
               <div className="feature-title">Title</div>
