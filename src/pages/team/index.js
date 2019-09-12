@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Link } from 'gatsby'
+import { Link } from 'gatsby';
 import SEO from '../../components/SEO';
 import Layout from '../../layouts/index';
 
@@ -45,9 +45,9 @@ const Team = (props) => {
                   </div>
                   <div className="card-right">
                     <h2 className="card-title">
-                    <Link to={edge.node.frontmatter.path}>
-                      {edge.node.frontmatter.title}
-                    </Link>
+                      <Link to={edge.node.frontmatter.path}>
+                        {edge.node.frontmatter.title}
+                      </Link>
                     </h2>
                     <ul className="card-meta">
                       <li>
@@ -55,7 +55,11 @@ const Team = (props) => {
                       </li>
                       <li>
                         <p>
-                          {edge.node.frontmatter.linkedinurl}
+                          <a href={edge.node.frontmatter.linkedinurl}>LinkedIn</a>
+{' '}
+//
+{' '}
+<a href={edge.node.frontmatter.github}>Github</a>
                         </p>
                       </li>
                       <li>
@@ -94,6 +98,7 @@ export const query = graphql`
             image
             jobtitle
             linkedinurl
+            github
           }
         }
       }

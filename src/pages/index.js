@@ -1,65 +1,93 @@
-import React from 'react'
-import { graphql, withPrefix, Link } from 'gatsby'
-import Helmet from 'react-helmet'
-import SEO from '../components/SEO'
-import Layout from '../layouts/index'
-import Call from '../components/Call'
+import React from 'react';
+import { graphql, withPrefix, Link } from 'gatsby';
+import Helmet from 'react-helmet';
+import SEO from '../components/SEO';
+import Layout from '../layouts/index';
+import Call from '../components/Call';
 
-const Home = props => {
-  const markdown = props.data.allMarkdownRemark.edges
-  const json = props.data.allFeaturesJson.edges
+const Home = (props) => {
+  const markdown = props.data.allMarkdownRemark.edges;
+  const json = props.data.allFeaturesJson.edges;
   return (
-    <Layout bodyClass='page-home'>
-      <SEO title='Home' />
+    <Layout bodyClass="page-home">
+      <SEO title="Home" />
       <Helmet>
         <meta
-          name='description'
-          content='Blockchain club at SJSU. Furthering growth and '
+          name="description"
+          content="Blockchain club at SJSU. Furthering growth and "
         />
       </Helmet>
-      <div className='intro pb-4'>
-        <div className='container'>
+      <div className="intro pb-4">
+        <div className="container">
           <h1>BlockLegion @ SJSU</h1>
           <h4>Blockchain club at San Jose State University.</h4>
         </div>
       </div>
 
-      <div className='container pt-2'>
+      {/* New box */}
+      {/* <div className="container pt-5 pb-5 pt-md-7 pb-md-7">
+        <div className="row justify-content-center">
+          <div className="col-12">
+            <h2 className="title-3 text-dark mb-4">Who We Are</h2>
+          </div>
+          {/* code comes after this */}
+          <div className="col-12 col-md-6 col-lg-4 mb-2">
+            <div className="feature">
+              <div className="feature-title">Title</div>
+              <div className="feature-content">Desription</div>
+            </div>
+          </div>
+          <div className="col-12 col-md-6 col-lg-4 mb-2">
+            <div className="feature">
+              <div className="feature-title">Title</div>
+              <div className="feature-content">Desription</div>
+            </div>
+          </div>
+          <div className="col-12 col-md-6 col-lg-4 mb-2">
+            <div className="feature">
+              <div className="feature-title">Title</div>
+              <div className="feature-content">Desription</div>
+            </div>
+          </div>
+        </div>
+      </div> */}
+      {/* New box end */}
+      <div className="container pt-2">
         <Call button />
       </div>
-      <div className='container pt-5 pb-5 pt-md-7 pb-md-7'>
-        <div className='row justify-content-center'>
-          <div className='col-12'>
-            <h2 className='title-3 text-dark mb-4'>What We Offer</h2>
+      <div className="container pt-5 pb-5 pt-md-7 pb-md-7">
+        <div className="row justify-content-center">
+          <div className="col-12">
+            <h2 className="title-3 text-dark mb-4">What We Offer</h2>
           </div>
           {json.map(edge => (
-            <div key={edge.node.id} className='col-12 col-md-6 col-lg-4 mb-2'>
-              <div className='feature'>
+            <div key={edge.node.id} className="col-12 col-md-6 col-lg-4 mb-2">
+              <div className="feature">
                 {edge.node.image && (
-                  <div className='feature-image'>
+                  <div className="feature-image">
                     <img src={withPrefix(edge.node.image)} />
                   </div>
                 )}
-                <h2 className='feature-title'>{edge.node.title}</h2>
-                <div className='feature-content'>{edge.node.description}</div>
+                <h2 className="feature-title">{edge.node.title}</h2>
+                <div className="feature-content">{edge.node.description}</div>
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      <div className='container pt-8 pt-md-10'>
-        <div className='row justify-content-start'>
-          <div className='col-12'>
-            <h2 className='title-3 text-dark mb-3'>From The Blog</h2>
+      <div className="container pt-8 pt-md-10">
+        <div className="row justify-content-start">
+          <div className="col-12">
+            <h2 className="title-3 text-dark mb-3">From The Blog</h2>
           </div>
           {markdown.map(edge => (
             <div
               key={edge.node.frontmatter.path}
-              className='col-12 col-md-4 mb-1'
+              className="col-12 col-md-4 mb-1"
             >
-              <div className='card service service-teaser'>
-                <div className='card-content'>
+              <div className="card service service-teaser">
+                <div className="card-content">
                   <h2>
                     <Link to={edge.node.frontmatter.path}>
                       {edge.node.frontmatter.title}
@@ -70,10 +98,10 @@ const Home = props => {
               </div>
             </div>
           ))}
-          <div className='col-12 text-center'>
+          <div className="col-12 text-center">
             <Link
-              className='button button-primary mt-2'
-              to='/blog'
+              className="button button-primary mt-2"
+              to="/blog"
               style={{ marginBottom: '25px' }}
             >
               View all Blog Posts
@@ -82,8 +110,8 @@ const Home = props => {
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query {
@@ -114,6 +142,6 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-export default Home
+export default Home;

@@ -1,4 +1,4 @@
-const guid = process.env.NETLIFY_GOOGLE_ANALYTICS_ID
+const guid = process.env.NETLIFY_GOOGLE_ANALYTICS_ID;
 
 module.exports = {
   siteMetadata: {
@@ -6,26 +6,26 @@ module.exports = {
     description: 'Blockchain club at SJSU',
     contact: {
       phone: 'XXX XXX XXX',
-      email: 'contact@blocklegion.sjsu.edu'
+      email: 'org@blocklegion.tech',
     },
     menuLinks: [
       {
         name: 'Blog',
-        link: '/blog'
+        link: '/blog',
       },
       {
         name: 'Team',
-        link: '/team'
+        link: '/team',
       },
       {
         name: 'Events',
-        link: '/events'
+        link: '/events',
       },
       {
         name: 'Contact',
-        link: '/contact'
-      }
-    ]
+        link: '/contact',
+      },
+    ],
   },
   plugins: [
     'gatsby-plugin-sass',
@@ -36,30 +36,30 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/pages`,
-        name: 'pages'
-      }
+        name: 'pages',
+      },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/data`,
-        name: 'data'
-      }
+        name: 'data',
+      },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/images`,
-        name: 'images'
-      }
+        name: 'images',
+      },
     },
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: guid || 'UA-XXX-1',
         // Puts tracking script in the head instead of the body
-        head: false
-      }
-    }
-  ]
-}
+        head: false,
+      },
+    },
+  ],
+};
