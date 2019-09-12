@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import SEO from '../../components/SEO';
 import Layout from '../../layouts/index';
 
@@ -31,21 +31,21 @@ const Testimonials = (props) => {
                     {edge.node.frontmatter.title}
                   </h2>
                   <p className="testimonials-name">
-                    When?
+                    When? 
 {' '}
 {edge.node.frontmatter.date}
 {' '}
 at
-{' '}
+{" "}
                     {edge.node.frontmatter.time}
                     <br />
-                    Where?
+                    Where? 
 {' '}
 {edge.node.frontmatter.location}
                   </p>
                   <br />
                   <p className="testimonials-name">
-                    Conducted by:
+                    Conducted by: 
 {' '}
 {edge.node.frontmatter.name}
                   </p>
@@ -57,6 +57,24 @@ at
                   className="testimonials-content"
                   dangerouslySetInnerHTML={{ __html: edge.node.html }}
                 />
+              </div>
+              <div className="rsvp">
+                {edge.node.frontmatter.rsvp && (
+                  <div className="call-box-bottom">
+                    {/* <Link
+                      className="button button-primary mt-2"
+                      to={edge.node.frontmatter.rsvp}
+                    > */}
+                    <a
+                      className="button button-primary mt-2"
+                      href={edge.node.frontmatter.rsvp}
+
+                    >
+                      RSVP NOW!
+                    </a>
+                    {/* </Link> */}
+                  </div>
+                )}
               </div>
             </div>
           ))}
@@ -82,6 +100,7 @@ export const query = graphql`
             date
             time
             location
+            rsvp
           }
         }
       }
