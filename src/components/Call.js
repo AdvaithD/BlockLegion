@@ -23,17 +23,12 @@ const Call = props => (
 
     {props.button && (
       <div className="call-box-bottom">
-        <Link
-          className="button button-primary mt-2"
-          to="https://discord.gg/3YFTR5K"
-        >
           <a
             href="https://discord.gg/3YFTR5K"
-            style={{ color: '#fff', textDecoration: 'none' }}
+            className="button button-primary mt-2"
           >
             JOIN OUR DISCORD SERVER!
           </a>
-        </Link>
       </div>
     )}
   </div>
